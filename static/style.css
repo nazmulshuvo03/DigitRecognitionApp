@@ -1,7 +1,5 @@
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300');
 
-* { margin: 0; padding: 0; }
-
 html
 {
 	background-image: -webkit-radial-gradient(top center, circle cover, #E7E7E8 30%, #C6C6C6);
@@ -17,15 +15,18 @@ html
 	-o-user-select: none;
 	user-select: none;
 	overflow: hidden;
+	position: relative;
+	margin: 0;
+	padding: 0;
 }
 
 h1
 {
 	position: absolute;
-	top: 20px;
-	left: 0;
-	right: 0;
-	text-align: center;
+	top: 10px;
+	left: 450px;
+	right: 0px;
+	bottom: 0px;
 	font-family: 'Open Sans', Helvetica;
 	color: #807F7D;
 	font-size: 25px;
@@ -33,17 +34,59 @@ h1
 	z-index: -1;
 }
 
-h1 span { color: #4DAF7C; font-weight: 400; }
+span
+{
+    color: #4DAF7C;
+    font-weight: 400;
+}
 
-/* Debug */
+/* Options */
 
-#debug
+#options
 {
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 80px;
+	left: 100px;
+	right: 0px;
+	bottom: 0px;
 	padding: 5px;
 }
+
+/* Canvas */
+
+#canvas
+{
+    border:8px solid;
+    position: absolute;
+    top: 160px;
+	left: 60px;
+	right: 0px;
+	bottom: 0px;
+	width: 280px;
+	height: 280px;
+    border-radius: 5px;
+    cursor: crosshair;
+}
+
+
+.buttons
+{
+	position: absolute;
+	top: 470px;
+    left: 120px;
+	right: 0px;
+	bottom: 0px;
+}
+
+#result
+{
+    position: absolute;
+	top: 520px;
+    left: 80px;
+	right: 0px;
+	bottom: 0px;
+}
+
 .myButton {
 	-moz-box-shadow: 0px 10px 14px -7px #3e7327;
 	-webkit-box-shadow: 0px 10px 14px -7px #3e7327;

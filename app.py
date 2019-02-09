@@ -1,15 +1,11 @@
 from flask import Flask, render_template, request
-
+from scipy.misc import imresize, imread
+from model.load import *
+import numpy as np
 import re
 import sys
 import os
 import base64
-
-from scipy.misc import imresize, imread
-
-from model.load import *
-
-import numpy as np
 
 sys.path.append(os.path.abspath('./model'))
 
@@ -23,7 +19,7 @@ model, graph = init()
 def convertImage(imgData1):
     imgstr = re.search(b'base64,(.*)', imgData1).group(1)
     with open('output.png', 'wb') as output:
-        #output.write(imgstr.decode('base64'))
+        # output.write(imgstr.decode('base64'))
         output.write(base64.b64decode(imgstr))
 
 

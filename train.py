@@ -5,25 +5,27 @@ Gets to 99.25% test accuracy after 12 epochs
 '''
 # python 2/3 compatibility
 from __future__ import print_function
-#simplified interface for building models 
+# simplified interface for building models
 import keras
-#our handwritten character labeled dataset
+# our handwritten character labeled dataset
 from keras.datasets import mnist
-#because our models are simple
+# because our models are simple
 from keras.models import Sequential
-#dense means fully connected layers, dropout is a technique to improve convergence, flatten to reshape our matrices for feeding
-#into respective layers
-from keras.layers import Dense, Dropout, Flatten
-#for convolution (images) and pooling is a technique to help choose the most relevant features in an image
+# dense means fully connected layers, dropout is a technique to improve convergence, flatten to reshape our matrices for feeding
+# into respective layers
+from keras.layers import Dense, Dropout, Flatten, Activation
+# for convolution (images) and pooling is a technique to help choose the most relevant features in an image
 from keras.layers import Conv2D, MaxPooling2D
 from keras import backend as K
 
 # mini batch gradient descent ftw
-batch_size = 128
+# batch_size = 128
+batch_size = 32
 # 10 difference characters
 num_classes = 10
 # very short training time
-epochs = 12
+# epochs = 12
+epochs = 5
 
 # input image dimensions
 # 28x28 pixel images.
@@ -58,31 +60,34 @@ print(x_test.shape[0], 'test samples')
 y_train = keras.utils.to_categorical(y_train, num_classes)
 y_test = keras.utils.to_categorical(y_test, num_classes)
 
-# build our model
-model = Sequential()
-# convolutional layer with rectified linear unit activation
-model.add(Conv2D(32, kernel_size=(3, 3),
-                 activation='relu',
-                 input_shape=input_shape))
-# again
-model.add(Conv2D(64, (3, 3), activation='relu'))
-# choose the best features via pooling
-model.add(MaxPooling2D(pool_size=(2, 2)))
-# randomly turn neurons on and off to improve convergence
-model.add(Dropout(0.25))
-# flatten since too many dimensions, we only want a classification output
-model.add(Flatten())
-# fully connected to get all relevant data
-model.add(Dense(128, activation='relu'))
-# one more dropout for convergence' sake :)
-model.add(Dropout(0.5))
-# output a softmax to squash the matrix into output probabilities
-model.add(Dense(num_classes, activation='softmax'))
-# Adaptive learning rate (adaDelta) is a popular form of gradient descent rivaled only by adam and adagrad
-# categorical ce since we have multiple classes (10)
-model.compile(loss=keras.losses.categorical_crossentropy,
-              optimizer=keras.optimizers.Adadelta(),
-              metrics=['accuracy'])
+
+def model(num_classes):
+    model = Sequential()
+    model.add(Conv2D(32, (5, 5), input_shape=input_shape, activation='relu', padding='same'))
+    model.add(Conv2D(32, (5, 5), activation='relu', padding='same'))
+    model.add(MaxPooling2D(pool_size=(2, 2)))
+
+    model.add(Conv2D(128, (3, 3), activation='relu', padding='same'))
+    model.add(Conv2D(128, (3, 3), activation='relu', padding='same'))
+
+    model.add(MaxPooling2D(pool_size=(2, 2)))
+
+    model.add(Conv2D(256, (3, 3), activation='relu', padding='same'))
+    model.add(Conv2D(256, (3, 3), activation='relu', padding='same'))
+    model.add(MaxPooling2D(pool_size=(2, 2)))
+
+    model.add(Flatten())
+    model.add(Dense(64, activation='relu'))
+    model.add(Dropout(0.2))
+    model.add(Dense(num_classes, activation='softmax'))
+
+    model.compile(loss='categorical_crossentropy', metrics=['accuracy'], optimizer='adam')
+    # UNCOMMENT THIS TO VIEW THE ARCHITECTURE
+    # model.summary()
+
+    return model
+
+model = model(num_classes)
 
 # train that ish!
 model.fit(x_train, y_train,
