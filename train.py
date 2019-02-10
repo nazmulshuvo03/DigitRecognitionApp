@@ -25,7 +25,7 @@ batch_size = 32
 num_classes = 10
 # very short training time
 # epochs = 12
-epochs = 5
+epochs = 10
 
 # input image dimensions
 # 28x28 pixel images.
@@ -72,13 +72,9 @@ def model(num_classes):
 
     model.add(MaxPooling2D(pool_size=(2, 2)))
 
-    model.add(Conv2D(256, (3, 3), activation='relu', padding='same'))
-    model.add(Conv2D(256, (3, 3), activation='relu', padding='same'))
-    model.add(MaxPooling2D(pool_size=(2, 2)))
-
     model.add(Flatten())
     model.add(Dense(64, activation='relu'))
-    model.add(Dropout(0.2))
+    model.add(Dropout(0.25))
     model.add(Dense(num_classes, activation='softmax'))
 
     model.compile(loss='categorical_crossentropy', metrics=['accuracy'], optimizer='adam')
