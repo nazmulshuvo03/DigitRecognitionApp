@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="df47def1-5f35-4b95-ab97-b890cd25ddad" name="Default" comment="view updated">
-      <change beforePath="$PROJECT_DIR$/model.h5" beforeDir="false" afterPath="$PROJECT_DIR$/model.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.json" beforeDir="false" afterPath="$PROJECT_DIR$/model.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model.h5" beforeDir="false" afterPath="$PROJECT_DIR$/model/model.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model.json" beforeDir="false" afterPath="$PROJECT_DIR$/model/model.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output.png" beforeDir="false" afterPath="$PROJECT_DIR$/output.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/handwrittenpage1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/handwrittenpage2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/handwrittenpage3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/handwrittenpage4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/handwrittenpage5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
-    </list>
+    <list default="true" id="df47def1-5f35-4b95-ab97-b890cd25ddad" name="Default" comment="model updated" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1549727366726</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="model updated">
+      <created>1549792488147</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1549792488148</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -221,13 +216,13 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32985073" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.6861436" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.6861436" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.37228715" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.32854864" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.327212" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32554257" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.5208681" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -245,7 +240,8 @@
     </ignored-roots>
     <MESSAGE value="screenshots added" />
     <MESSAGE value="view updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="view updated" />
+    <MESSAGE value="model updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="model updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
